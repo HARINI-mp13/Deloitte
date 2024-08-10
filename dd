@@ -1,0 +1,24 @@
+import requests
+
+# Your API keys (make sure they match what you have in the image)
+api_key = "your_first_key"
+secret_key = "your_second_key"
+
+# Example API endpoint
+url = "https://api.your-sharekhan-endpoint.com/your_endpoint"
+
+# Headers with API key and secret
+headers = {
+    "APIKey": api_key,
+    "SecretKey": secret_key,
+    "Content-Type": "application/json"
+}
+
+# Making the request
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print(f"Failed to retrieve data: {response.status_code}")
